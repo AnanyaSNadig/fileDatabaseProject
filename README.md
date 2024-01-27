@@ -27,7 +27,7 @@ To use the API provided by apiApp.py, follow these steps:
 1. Ensure Flask is installed:
 
 ```console
-    pip install Flask
+pip install Flask
 ```
 
 2. Run the Flask API by running the main pyhton script:
