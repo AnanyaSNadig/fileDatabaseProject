@@ -67,7 +67,7 @@ export MYSQL_DB="your_database_name"
 export MYSQL_HOST="your_host_name"
 export MYSQL_USER="your_user_name"
 export MYSQL_PASSWORD="your_password"
-export MYSQL_PORT="your_port_number"
+export MYSQL_PORT="mysql_port_number"
 ```
 
 ### To check the value of an environment variable:
