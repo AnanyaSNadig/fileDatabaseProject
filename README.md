@@ -3,11 +3,13 @@
 This project consists of three Python scripts: apiApp.py, listFiles.py, and filesDB.py. 
 The main script, apiApp.py, utilizes the functionalities provided by the listFiles and filesDB libraries.
 
+
 ## Project Structure
 
 - apiApp.py: Main script that uses the functionalities provided by listFiles and filesDB.
 - listFiles.py: Library with methods to list files and update files.
 - filesDB.py: Library with methods to interact with the database.
+
 
 ## Usage
 
@@ -24,9 +26,9 @@ To use the API provided by apiApp.py, follow these steps:
 
 1. Ensure Flask is installed:
 
-    ```bash
+```console
     pip install Flask
-    ```
+```
 
 2. Run the Flask API by running the main pyhton script:
 
@@ -49,9 +51,9 @@ pip install -r requirements.txt
    
 2. Copy your project files to the EC2 instance using scp command.
    
-   ```console
-   scp -i your-key.pem your-file.tgz ec2-user@your-ec2-instance-ip:/path/on/ec2
-   ```
+```console
+scp -i your-key.pem your-file.tgz ec2-user@your-ec2-instance-ip:/path/on/ec2
+```
    
 3. Install required packages
    
@@ -85,32 +87,32 @@ echo $MYSQL_DB
 
 3. Access the MYSQL container.
 
-  ```console
-   docker exec -it container_name mysql -u user_name -p your_password
+```console
+docker exec -it container_name mysql -u user_name -p your_password
 ```
 
 4. Create a database.
 
 5. Create a table with following columns:
    
-  ```sql
-    CREATE TABLE files (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    filePath VARCHAR(255),
-    searchString VARCHAR(255),
-    replaceString VARCHAR(255),
-    replacedTime DATETIME
-    );
+```sql
+CREATE TABLE files (
+id INT AUTO_INCREMENT PRIMARY KEY,
+filePath VARCHAR(255),
+searchString VARCHAR(255),
+replaceString VARCHAR(255),
+replacedTime DATETIME
+);
 ```
 
 5. View the table to check the output:
 
-   ```sql
-   USE fileDatabase;
-   SELECT * FROM files;
-   ```
+```sql
+USE fileDatabase;
+SELECT * FROM files;
+```
 
 6. Exit the container
-  ```console
-  exit
-  ```
+```console
+exit
+```
