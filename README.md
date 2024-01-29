@@ -30,7 +30,7 @@ To use the API provided by apiApp.py, follow these steps:
 pip install Flask
 ```
 
-2. Run the Flask API by running the main pyhton script:
+2. Run the Flask API by running the main python script
 
 
 3. Access the API using your browser or a tool like curl
