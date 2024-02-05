@@ -14,7 +14,7 @@ class Database:
         self.cursor = self.connection.cursor()
 
     def get(self, timeFrame):
-        query = "SELECT * FROM files WHERE replacedTime >= %s"
+        query = "SELECT * FROM files WHERE replaceTime >= %s"
         timeFrameDiff = datetime.now() - timedelta(minutes = timeFrame)
         self.cursor.execute(query, ([timeFrameDiff]))
         return self.cursor.fetchall()
