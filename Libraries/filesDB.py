@@ -8,7 +8,7 @@ class Database:
             host = host,
             user = user,
             password = password,
-            port = int(port)
+            port = port
         )
         self.cursor = self.connection.cursor()
 
