@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 
 class Database:
     def __init__(self,database, host, user, password, port):
+        port = int(port) if port else 3306
         self.connection = mysql.connector.connect(
             database = database,
             host = host,
