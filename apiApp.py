@@ -32,5 +32,5 @@ def main(path, time_frame, str_to_find, str_to_replace):
             dbObj.add(filePath, searchStr, replaceStr, replacedTime)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=“0.0.0.0”, debug=True)
     main()
