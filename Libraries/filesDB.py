@@ -19,14 +19,29 @@ class Database:
         self.cursor.execute(query, ([timeFrameDiff]))
         return self.cursor.fetchall()
     
+    # def add(self, filePath, searchString, replaceString, replacedTime):
+    #     insert_query = "INSERT INTO files (filePath, searchString, replaceString, replacedTime) VALUES (%s, %s, %s, %s)"
+        
+    #     #TODO move time logic to Files.update method
+
+    #     self.cursor.execute(insert_query, (filePath, searchString, replaceString, replacedTime))
+
+    #     self.connection.commit()
+
+    
     def add(self, filePath, searchString, replaceString, replacedTime):
         insert_query = "INSERT INTO files (filePath, searchString, replaceString, replacedTime) VALUES (%s, %s, %s, %s)"
-        
-        #TODO move time logic to Files.update method
 
-        self.cursor.execute(insert_query, (filePath, searchString, replaceString, replacedTime))
+        try:
+            self.cursor.execute(insert_query, (filePath, searchString, replaceString, replacedTime))
+            self.connection.commit()
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            self.connection.rollback() 
+            return False 
+        else:
+            return True  
 
-        self.connection.commit()
 
     def delete(self):
         pass
